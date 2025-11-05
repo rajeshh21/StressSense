@@ -1,0 +1,11 @@
+\
+@echo off
+REM ==== Setup + Train + Run (Windows) ====
+python -m venv .venv
+call .venv\Scripts\activate
+pip install --upgrade pip wheel setuptools
+pip install -r requirements.txt
+python -m src.train_text
+echo.
+echo Training finished. Starting the app...
+streamlit run app/streamlit_app.py
